@@ -16,12 +16,19 @@ Toutes les modifications ont eu lieu dans l'activity ItemListActivity :
 
 onCreate\n
 >>après le if()\n
+
 >>ajout d'un else (smartphones!)\n
+
 >>récupération du fragment affiche en top sur R.id.item_list\n
+
 >> si null
+
 >>  alors création d'un fragment
+
 >> sinon 2 cas :
+
 >> le fragment est une instance d'un fragment de details > donc il faut afficher le home en "< " pour pouvoir revenir sur le fragment de list
+
 >> sinon pas la peine, on met setHomeDisplayAsUpEnabled(false)
 
 
