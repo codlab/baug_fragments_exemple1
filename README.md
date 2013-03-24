@@ -15,31 +15,30 @@ Toutes les modifications ont eu lieu dans l'activity ItemListActivity :
 =======================================================================
 
 onCreate\n
-après le if()\n
-ajout d'un else (smartphones!)\n
->>
-récupération du fragment affiche en top sur R.id.item_list\n
+>>après le if()\n
+>>ajout d'un else (smartphones!)\n
+>>récupération du fragment affiche en top sur R.id.item_list\n
 >> si null
-   alors création d'un fragment
+>>  alors création d'un fragment
 >> sinon 2 cas :
-   le fragment est une instance d'un fragment de details > donc il faut afficher le home en "< " pour pouvoir revenir sur le fragment de list
-   sinon pas la peine, on met setHomeDisplayAsUpEnabled(false)
+>> le fragment est une instance d'un fragment de details > donc il faut afficher le home en "< " pour pouvoir revenir sur le fragment de list
+>> sinon pas la peine, on met setHomeDisplayAsUpEnabled(false)
 
 
 onOptionsItemSelected(MenuItem item)
-gestion du clic sur android.R.id.home
-    récupération d'une nouvelle transaction
-    remplacement par un nouveau fragment de liste (pouvant être amélioré en sauvegardant, etc...)
-    et commit
-    enfin setHopeDisplayAsUpEnabled(false) >> reste néanmoins exploit de temps possible (avant transaction, mieux de faire une vérification du type comme dans le onCreate)
+>> gestion du clic sur android.R.id.home
+>> récupération d'une nouvelle transaction
+>> remplacement par un nouveau fragment de liste (pouvant être amélioré en sauvegardant, etc...)
+>> et commit
+>> enfin setHopeDisplayAsUpEnabled(false) >> reste néanmoins exploit de temps possible (avant transaction, mieux de faire une vérification du type comme dans le onCreate)
     
 onBackPressed()
-ajout du cas si on est en mode smartphone :
-    récupération d'une nouvelle transaction si le fragment actuel est un ItemDetailFragment
-    remplacement part un nouveau fragment de liste
-    et commit
-    puis le setHomeDisplayAsUpEnabled(false)
+>> ajout du cas si on est en mode smartphone :
+>>    récupération d'une nouvelle transaction si le fragment actuel est un ItemDetailFragment
+>>    remplacement part un nouveau fragment de liste
+>>    et commit
+>>    puis le setHomeDisplayAsUpEnabled(false)
 
 onItemSelected() (La méthode callback de l'activity)
-modification du comportement de startActivity -> transaction de fragment
-    puis le setHomeDisplayAsUpEnabled(true)
+>>modification du comportement de startActivity -> transaction de fragment
+>>    puis le setHomeDisplayAsUpEnabled(true)
