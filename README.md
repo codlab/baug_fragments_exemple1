@@ -6,19 +6,19 @@ Modification de l'exemple List&lt;->Detail proposé par l'ADT afin d'être réel
 
 Modification du layout :
 ========================
-activity_item_list :
-<fragment /> ===> <FrameLayout />
-L'utilisation du framelayout fait qu'en cas de plusieurs add, les fragment s'ajoutent les uns sur les autres
-pour permettre l'utilisation sur smartphone de la stack des fragments dessus (on aurait pu prendre tous les LinearLayout, RelativeLayout,... à la place)
+activity_item_list : \n
+<fragment /> ===> <FrameLayout />\n
+L'utilisation du framelayout fait qu'en cas de plusieurs add, les fragment s'ajoutent les uns sur les autres\n
+pour permettre l'utilisation sur smartphone de la stack des fragments dessus (on aurait pu prendre tous les LinearLayout, RelativeLayout,... à la place)\n
 
 Toutes les modifications ont eu lieu dans l'activity ItemListActivity :
 =======================================================================
 
-onCreate
-après le if()
-ajout d'un else (smartphones!)
+onCreate\n
+après le if()\n
+ajout d'un else (smartphones!)\n
 >>
-récupération du fragment affiche en top sur R.id.item_list
+récupération du fragment affiche en top sur R.id.item_list\n
 >> si null
    alors création d'un fragment
 >> sinon 2 cas :
